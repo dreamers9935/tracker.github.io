@@ -1,0 +1,82 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: ms(0);
+  position: relative;
+
+  .timestamp {
+    color: var(--black-50);
+    font-weight: 600;
+    margin: 0;
+    margin-right: ms(0);
+  }
+
+  .bell-icon,
+  .timeline-icon {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: ms(1);
+    justify-content: center;
+    margin-left: ms(-2);
+    margin-right: ms(-2);
+    width: ms(1);
+
+    svg {
+      color: var(--black-50);
+      cursor: pointer;
+    }
+  }
+
+  .bell-icon {
+    position: relative;
+
+    .indicator {
+      background: var(--pblue);
+      border-radius: 50%;
+      height: ms(-2);
+      position: absolute;
+      right: -#{ms(-1)};
+      top: -3px;
+      width: ms(-2);
+    }
+  }
+
+  &.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: ms(0);
+    position: absolute;
+    top: ms(5) + ms(3);
+
+    .highlight {
+      color: var(--brown) !important;
+      position: absolute;
+      text-align: center;
+      top: 2.5rem;
+      width: 100%;
+    }
+  }
+}
+
+.updates-header {
+  align-self: center;
+  color: var(--gray-dark);
+  width: 100%;
+
+  h2 {
+    color: var(--pblue);
+    font-weight: 900;
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    margin-bottom: ms(0);
+  }
+}

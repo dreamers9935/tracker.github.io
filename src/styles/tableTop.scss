@@ -1,0 +1,79 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.table-top {
+  align-items: flex-end;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  justify-content: space-between;
+  margin-bottom: ms(-3);
+  width: 100%;
+
+  .option-toggle,
+  .info-toggle,
+  .million-toggle,
+  .expand-table-toggle {
+    align-items: center;
+    background: var(--opaque);
+    border-radius: ms(-3);
+    color: var(--black-50);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: ms(2);
+    justify-content: center;
+    margin-right: ms(-3);
+    width: ms(2);
+
+    svg {
+      align-self: center;
+    }
+
+    &.is-highlighted {
+      background: var(--green-10);
+      color: var(--green);
+    }
+  }
+
+  .info-toggle {
+    &.is-highlighted {
+      background: var(--yellow-10);
+      color: var(--yellow);
+    }
+  }
+
+  .million-toggle {
+    font-size: ms(-1);
+    font-weight: 900;
+    height: ms(3);
+    text-align: center;
+    width: ms(3);
+
+    &.is-highlighted {
+      background: var(--pink-10);
+      color: var(--pink);
+    }
+  }
+
+  .expand-table-toggle {
+    color: var(--black-50);
+    margin-left: auto;
+    margin-right: 0;
+
+    svg {
+      cursor: pointer;
+      transform: rotate(-90deg);
+    }
+
+    &.is-highlighted {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    margin-top: 1rem;
+  }
+}

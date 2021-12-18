@@ -1,0 +1,28 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.tooltip-root {
+  .tooltip {
+    max-width: ms(6);
+    pointer-events: none;
+    position: absolute;
+    top: -100;
+    z-index: 99999;
+
+    .default {
+      background: var(--black);
+      border-radius: ms(-3);
+      color: var(--white);
+      font-weight: 600;
+      line-height: ms(1);
+      margin: 0;
+      padding: ms(0);
+    }
+  }
+}
+
+// .active-tooltip {
+// }
+
+*[data-tooltip] {
+  border-bottom: 2px dotted var(--gray-mid);
+}

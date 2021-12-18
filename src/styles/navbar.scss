@@ -1,0 +1,259 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.navbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: ms(3);
+  justify-content: space-between;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .navbar-left {
+    align-items: center;
+    color: var(--black-50);
+    cursor: pointer;
+    display: flex;
+    flex: 0.15;
+    flex-direction: row;
+    font-size: ms(-1);
+    font-weight: 600;
+    height: 100%;
+    justify-content: center;
+
+    &:hover {
+      background: var(--primary-25);
+      color: var(--primary);
+    }
+  }
+
+  .navbar-middle {
+    align-items: center;
+    color: var(--black-50);
+    display: flex;
+    flex: 0.7;
+    flex-direction: row;
+    font-size: ms(0);
+    font-weight: 900;
+    height: 100%;
+    justify-content: center;
+    text-transform: uppercase;
+
+    span {
+      color: var(--primary);
+      display: block;
+    }
+  }
+
+  .navbar-right {
+    align-items: center;
+    color: var(--black-50);
+    cursor: pointer;
+    display: flex;
+    flex: 0.15;
+    flex-direction: row;
+    font-size: ms(-1);
+    font-weight: 600;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+
+    &:hover {
+      background: var(--primary-25);
+      color: var(--primary);
+    }
+  }
+
+  .language-toggle {
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .sun-moon {
+    cursor: pointer;
+  }
+
+  .expand {
+    background: var(--white);
+    color: var(--black-50);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    z-index: 9999;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    a,
+    .sun-moon {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      padding: ms(1);
+
+      &:hover {
+        background: var(--primary-25);
+        color: var(--primary);
+      }
+
+      span {
+        &.focused {
+          background: var(--primary-25);
+          color: var(--primary);
+          margin-left: -#{ms(-2)};
+          padding: ms(-2);
+        }
+      }
+    }
+
+    .expand-bottom {
+      align-self: flex-start;
+      border: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: ms(1);
+      margin-left: ms(1);
+
+      h6 {
+        font-weight: 600;
+        margin: 0;
+      }
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .navbar {
+    margin-bottom: ms(0);
+
+    .expand {
+      height: calc(100% - #{ms(3)});
+      overflow: auto;
+      top: ms(3);
+      transform: none !important;
+    }
+
+    .expand-bottom {
+      margin-top: auto;
+    }
+
+    .navbar-middle {
+      span {
+        display: inline;
+      }
+    }
+
+    .navbar-right {
+      span {
+        display: none;
+
+        &:first-child {
+          display: initial;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    background: var(--white);
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    min-width: ms(4);
+    position: fixed;
+    z-index: 999;
+
+    .navbar-left {
+      flex: 0.1;
+      order: 3;
+      text-align: center;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    .navbar-middle {
+      flex: 0.1;
+      font-size: 0.6rem;
+      order: 1;
+      text-align: center;
+      width: 46px;
+      word-wrap: break-word;
+    }
+
+    .navbar-right {
+      background: var(--white);
+      display: flex;
+      flex: 0.9;
+      flex-direction: column;
+      order: 2;
+      width: 100%;
+
+      &:hover {
+        background: none;
+        color: var(--black-50);
+      }
+
+      span {
+        display: flex;
+        flex-direction: row;
+        height: 1.5rem;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+
+    .expand {
+      background: var(--white);
+      flex-direction: column;
+      height: 100%;
+      padding-left: 0;
+      width: 15rem;
+
+      div:first-child,
+      div:last-child {
+        flex: 0.1;
+      }
+
+      .links {
+        display: flex;
+        flex: 0.9;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+          border: 0;
+          color: var(--black-50);
+          font-weight: 600;
+          height: 1.5rem;
+          width: 12rem;
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+}

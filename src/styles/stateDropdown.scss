@@ -1,0 +1,42 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.state-dropdown {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .state-name {
+    background: var(--black-5);
+    color: var(--black-50);
+    border-radius: ms(-4);
+    cursor: pointer;
+    padding: ms(-4);
+    margin: 0;
+  }
+
+  .dropdown {
+    background: var(--white);
+    border-radius: 5px;
+    height: ms(8);
+    overflow-y: scroll;
+    position: absolute;
+    top: ms(2) + ms(-4);
+    width: ms(7);
+    z-index: 999;
+
+    .state-name-dropdown {
+      color: var(--black-50);
+      cursor: pointer;
+      margin: 0;
+      padding: ms(-3);
+      margin: ms(-2);
+      border-radius: ms(-4);
+      line-height: 1.5;
+
+      &:hover {
+        background: var(--black-10);
+      }
+    }
+  }
+}

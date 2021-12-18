@@ -1,0 +1,66 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+@import './timeseriesHeader';
+@import './switch';
+@import './tabs';
+@import './pills';
+@import './alert';
+
+.timeseries-explorer {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 9999;
+
+  &.expanded {
+    flex: 0.475;
+  }
+
+  .timeseries-header {
+    color: var(--black-50);
+    display: column;
+
+    .title {
+      margin-top: ms(-8);
+    }
+  }
+
+  .scale-modes {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: ms(0);
+    color: var(--black-50);
+  }
+
+  .state-dropdown {
+    .state-name {
+      font-size: ms(0);
+      padding: ms(-2);
+    }
+
+    .state-name-dropdown {
+      font-size: ms(0);
+    }
+  }
+
+  &.stickied {
+    position: sticky !important;
+    top: -#{ms(4)};
+  }
+
+  .anchor {
+    right: ms(0);
+  }
+
+  .alert {
+    align-self: flex-end;
+    flex-direction: row;
+    font-size: ms(-1);
+    margin-top: 1rem;
+
+    .alert-right {
+      margin-left: ms(-1);
+      width: ms(7);
+    }
+  }
+}

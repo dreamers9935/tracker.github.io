@@ -1,0 +1,78 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.state-header {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: ms(0);
+  position: relative;
+  width: 100%;
+
+  .header-left {
+    .state-name,
+    .date {
+      margin: 0;
+    }
+
+    .state-name {
+      color: var(--black-50);
+      max-width: ms(6);
+    }
+
+    .date {
+      color: var(--black-50);
+      font-weight: 600;
+      margin-top: ms(-1);
+    }
+  }
+
+  .header-right {
+    color: var(--purple-50);
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    .tested-statistic,
+    .tested-title {
+      align-self: flex-end;
+      font-weight: 900;
+      margin: 0;
+      text-align: right;
+    }
+
+    .tested-title {
+      font-weight: 900;
+    }
+
+    .tested-statistic {
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    .timestamp,
+    .source {
+      align-self: flex-end;
+      font-weight: 600;
+      margin: 0;
+      margin-top: ms(-2);
+      text-align: right;
+    }
+
+    .timestamp {
+      margin-top: ms(-1) + ms(-5);
+    }
+
+    .source a {
+      background: var(--purple-10);
+      color: inherit;
+      padding: ms(-4);
+      text-decoration: none;
+
+      &:hover {
+        background: var(--purple-25);
+      }
+    }
+  }
+}

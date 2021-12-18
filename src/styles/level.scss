@@ -1,0 +1,72 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+@mixin is-statistic($statistic, $color) {
+  .is-#{$statistic} {
+    .total {
+      color: var(--#{$color});
+    }
+
+    .title {
+      color: var(--#{$color}-75);
+      font-weight: 700;
+    }
+
+    .delta {
+      color: var(--#{$color}-50);
+    }
+  }
+}
+
+.level {
+  @include is-statistic('confirmed', 'cherry');
+  @include is-statistic('active', 'blue');
+  @include is-statistic('recovered', 'green');
+  @include is-statistic('deceased', 'gray');
+
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .total,
+  .title {
+    margin-bottom: 0;
+  }
+
+  .total {
+    font-weight: 600;
+  }
+
+  .delta {
+    font-weight: 900;
+    margin-bottom: -#{ms(-1)};
+  }
+
+  .title {
+    font-weight: 600;
+    overflow-wrap: break-word;
+    text-align: center;
+    width: 100%;
+  }
+
+  .level-item {
+    display: flex;
+    flex-direction: column;
+    width: calc(25%);
+
+    .delta,
+    .total,
+    .title {
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .level {
+    .total {
+      font-size: #{'min(5vw, 24px)'} !important;
+    }
+  }
+}

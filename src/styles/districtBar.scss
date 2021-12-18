@@ -1,0 +1,167 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.district-bar {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ms(3);
+  width: 100%;
+
+  .district-bar-bottom {
+    .button {
+      background: var(--black-5);
+      border: 0;
+      border-radius: ms(-2);
+      color: var(--gray);
+      cursor: pointer;
+      font-size: ms(-1);
+      font-weight: 600;
+      justify-content: center;
+      margin-top: ms(0);
+      padding: ms(1) ms(1);
+
+      &:hover {
+        background: var(--black-10);
+      }
+    }
+  }
+
+  .district-bar-top {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .title {
+      font-weight: 900;
+      margin-bottom: ms(0);
+      margin-top: 0;
+
+      &.confirmed {
+        color: var(--cherry);
+      }
+
+      &.active {
+        color: var(--blue);
+      }
+
+      &.recovered {
+        color: var(--green);
+      }
+
+      &.deceased {
+        color: var(--gray);
+      }
+    }
+  }
+
+  .district-bar-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .district-bar-right {
+    margin-top: ms(1) + ms(-3);
+    display: flex;
+    flex-basis: 15rem;
+    flex-grow: 1;
+    justify-content: center;
+    position: relative;
+
+    .happy-sign {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      top: ms(3);
+    }
+
+    .delta-bar-graph {
+      width: 100%;
+
+      svg {
+        width: 100%;
+
+        .label {
+          font-size: 11px;
+          font-weight: 900;
+          text-anchor: middle;
+        }
+      }
+    }
+  }
+
+  .districts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 10rem;
+
+    &.is-grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: ms(-2);
+      padding-bottom: 0.5rem;
+      width: 100% !important;
+    }
+
+    .district {
+      display: flex;
+      flex-direction: row;
+      height: 2.5rem;
+      justify-content: flex-start;
+      margin-right: 0.25rem;
+      align-items: center;
+
+      .statistic {
+        min-width: ms(2) + ms(-1);
+      }
+
+      .statistic,
+      .title {
+        color: var(--black-50);
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .title {
+        display: inline-block !important;
+        width: auto !important;
+        line-height: 1.5;
+      }
+
+      .delta {
+        display: flex;
+        flex-direction: row;
+        margin-left: ms(0);
+
+        h6 {
+          margin: 0;
+
+          &.confirmed {
+            color: var(--cherry-50);
+          }
+
+          &.active {
+            color: var(--blue-50);
+          }
+
+          &.recovered {
+            color: var(--green-50);
+          }
+
+          &.deceased {
+            color: var(--gray-50);
+          }
+        }
+      }
+    }
+  }
+
+  .alert {
+    color: var(--black-50);
+    font-size: ms(-1) + ms(-7);
+  }
+}

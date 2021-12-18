@@ -1,0 +1,24 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+.alert {
+  align-items: center;
+  background: var(--opaque);
+  border-radius: ms(-3);
+  display: flex;
+  flex-direction: row;
+  padding: ms(0);
+
+  .icon,
+  .text {
+    color: var(--black-50);
+  }
+
+  .icon {
+    margin-right: ms(0);
+  }
+
+  .text {
+    font-size: ms(0);
+    margin-bottom: -1px;
+  }
+}
